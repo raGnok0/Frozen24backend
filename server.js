@@ -7,7 +7,13 @@ const { route } = require('./routes/authRoute')
 require('dotenv').config()
 
 const port = process.env.PORT || 4010
-app.use(cors())
+app.use(cors({
+    origin:'https://frozen24.in',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+}))
+
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 

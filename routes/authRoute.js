@@ -79,7 +79,7 @@ route.get('/getproducts',async(req,res)=>{
         snapshot.forEach((doc)=>{
             products.push({id:doc.id, ...doc.data()})
         })
-        console.log(products)
+        // console.log(products)
         return res.status(200).json({success:true,data:products})
     }catch(err){
         console.log('Error fetching products',err)
